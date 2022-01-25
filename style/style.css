@@ -9,7 +9,8 @@ body {
     box-sizing: border-box;
     overflow-x: hidden;
     background-color: #ffffff;
-    font-family: "NunitoSans-Regular", sans-serif;
+    font-family: "NunitoSans", sans-serif;
+    font-weight: 400;
     color: #404040;
 }
 .container {
@@ -24,11 +25,13 @@ body {
 }
 .title {
     font-size: 35px;
-    font-family: "Geometria-Bold", sans-serif;
+    font-family: "Geometria", sans-serif;
+    font-weight: 700;
     text-transform: uppercase;
 }
 .subtitle {
-    font-family: "NunitoSans-SemiBold", sans-serif;
+    font-family: "NunitoSans", sans-serif;
+    font-weight: 600;
     font-size: 23px;
 }
 .text {
@@ -44,7 +47,10 @@ body {
     border-radius: 10px;
     color: #ffffff;
     text-decoration: none;
+    transition: 0.2s ease-in;
 }
+
+
 .hidden {
     display: none;
 }
@@ -75,9 +81,7 @@ body {
     border: none;
     outline: none;
 }
-.glide__bullet:hover {
-    cursor: pointer;
-}
+
 .glide__bullet:last-of-type {
     margin-right: 0;
 }
@@ -144,8 +148,12 @@ body {
     background-color: #ffffff;
     padding: 55px 20px;
     display: flex;
+    justify-content: center;
+    align-items: center;
     max-width: 700px;
     width: 95% !important;
+    max-height: 500px;
+    height: 90% !important;
     box-sizing: border-box;
     z-index: 500;
 }
@@ -154,7 +162,9 @@ body {
 }
 
 .price-list__outer {
-    height: 95%;
+    max-width: 1000px;
+    width: 100%;
+    height: 90%;
     display: flex;
     justify-content: center;
 
@@ -171,7 +181,6 @@ body {
     z-index: 500;
     border-radius: 10px;
 }
-
 .price-list__header {
     margin-bottom: 60px;
 }
@@ -186,7 +195,6 @@ body {
     display: flex;
     flex-direction: column;
 }
-
 .price-list__row {
     width: 100%;
     display: flex;
@@ -195,10 +203,10 @@ body {
     margin-bottom: 30px;
 }
 .price-list__left {
-    width: 70%;
+    max-width: 555px;
+    width: 100%;
     position: relative;
 }
-
 .price-list__left > .text:after {
     content: "";
     width: 1px;
@@ -209,10 +217,11 @@ body {
     background-color: #37158D;
 }
 .price-list__right {
-    width: 30%;
+    max-width: 200px;
+    width: 100%;
 }
-
 .text_price-list {
+    white-space: nowrap;
     padding-left: 50px;
     position: relative;
     font-weight: 600;
@@ -225,6 +234,35 @@ body {
     position: absolute;
     left: 330px;
     top: 90px;
+}
+
+.politic__outer {
+    max-width: 1200px;
+    width: 95%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    padding: 60px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+.subtitle_politic {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.text_politic {
+    margin-bottom: 30px;
+}
+.text_politic--bold {
+    margin-left: 10px;
+    font-weight: 700;
+}
+.politic__row {
+    display: flex;
+    align-items: center;
 }
 /*////////////////////////////////////
 ////////////////HEADER////////////////
@@ -254,7 +292,8 @@ body {
 }
 
 .logo__text {
-    font-family: "Geometria-Bold", sans-serif;
+    font-family: "Geometria", sans-serif;
+    font-weight: 700;
     font-size: 15px;
     color: #ffffff;
     text-decoration: underline;
@@ -264,6 +303,7 @@ body {
 .menu {
     display: flex;
     list-style: none;
+    margin: 0;
 }
 
 .menu__item {
@@ -274,11 +314,24 @@ body {
 }
 
 .menu__link {
-
+    position: relative;
     display: inline-block;
     text-decoration: none;
     color: #404040;
 }
+.menu__link:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    opacity: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #404040;
+    transition: 0.2s ease-in;
+
+}
+
 
 .contact {
     display: flex;
@@ -286,6 +339,7 @@ body {
 }
 
 .contact__icon {
+    display: inline-block;
     margin-right: 15px;
     max-width: 34px;
     width: 100%;
@@ -356,7 +410,8 @@ body {
 .banner__title {
     margin-bottom: 10px;
     font-size: 53px;
-    font-family: "Geometria-Bold", sans-serif;
+    font-family: "Geometria", sans-serif;
+    font-weight: 700;
 
 }
 
@@ -372,7 +427,8 @@ body {
 
 .banner__subtitle {
     font-size: 40px;
-    font-family: "Geometria-Medium", sans-serif;
+    font-family: "Geometria", sans-serif;
+    font-weight: 500;
 }
 
 
@@ -430,13 +486,7 @@ body {
     opacity: 0;
     transition: 0.2s ease-in;
 }
-.advantage__item:hover {
-    cursor: pointer;
-    color: #404040;
-}
-.advantage__item:hover:after {
-    opacity: 1;
-}
+
 .advantage__icon {
     max-width: 50px;
     width: 100%;
@@ -449,9 +499,7 @@ body {
 .advantage__icon path {
     transition: 0.2s ease-in;
 }
-.advantage__item:hover > .advantage__icon path{
-    fill: url("#paint0_linear_28_144");
-}
+
 
 .text_advantage {
     margin-top: 20px;
@@ -736,7 +784,8 @@ body {
     background-image: url("../image/advantage-bg.png");
     background-size: cover;
     border-radius: 50%;
-    font-family: "Geometria-Bold", sans-serif;
+    font-family: "Geometria", sans-serif;
+    font-weight: 700;
     font-size: 50px;
     color: #36148C;
 }
@@ -807,7 +856,9 @@ body {
     width: 100%;
     box-sizing: border-box;
     text-decoration: none;
-    color: #ffffff;
+    color: #404040;
+    border-radius: 10px;
+    background-color: #FFFFFF;
     box-shadow: 0 0 5px #ffffff;
 }
 
@@ -868,6 +919,7 @@ body {
 .order__form_outer {
     max-width: 715px;
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -880,6 +932,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-y: scroll;
 }
 .order__form > .title {
     margin-bottom: 10px;
@@ -917,6 +970,10 @@ body {
 ////////////////FOOTER///////////////////
 ////////////////////////////////////////
  */
+.text_footer {
+    color: #404040;
+    text-decoration: none;
+}
 .footer__outer {
     padding-top: 35px;
     padding-bottom: 55px;
@@ -959,6 +1016,7 @@ body {
 }
 .footer__row {
     display: flex;
+    justify-content: flex-end;
 }
 .footer__icon {
     margin-left: 15px;
@@ -1137,6 +1195,12 @@ body {
     .text_price-list {
         padding-left: calc(20px + (50 - 20) * ((100vw - 320px) / (1920 - 320)));
     }
+    .politic__outer {
+        padding:  calc(20px + (60 - 20) * ((100vw - 320px) / (1920 - 320)));
+    }
+    .subtitle_politic, .text_politic  {
+        margin-bottom:  calc(20px + (30 - 20) * ((100vw - 320px) / (1920 - 320)));
+    }
 }
 @media (max-width: 1200px) {
     .glide__bullets_banner {
@@ -1145,6 +1209,37 @@ body {
     .work__number_outer:after {
         max-width: calc(80px + (245 - 80) * ((100vw - 320px) / (1200 - 320)));
         right: calc(-120px + (-180 + 120) * ((100vw - 900px) / (1200 - 900)));
+    }
+}
+@media (min-width: 992px) {
+    .button:hover {
+        cursor: pointer;
+        box-shadow: 0 0 20px #691F97;
+    }
+    .menu__link:hover:after {
+        opacity: 1;
+    }
+    .glide__bullet:hover {
+        cursor: pointer;
+    }
+    .advantage__item:hover {
+        cursor: pointer;
+        color: #404040;
+    }
+    .advantage__item:hover:after {
+        opacity: 1;
+    }
+    .advantage__item:hover > .advantage__icon path{
+        fill: url("#paint0_linear_28_144");
+    }
+    .politic:hover {
+        cursor: pointer;
+    }
+    .politic__row > input:hover {
+        cursor: pointer;
+    }
+    .text_politic--bold:hover {
+        cursor: pointer;
     }
 }
 @media (max-width: 768px) {
@@ -1172,9 +1267,6 @@ body {
     }
     .contact__icon {
         margin-right:calc(5px + (15 - 5) * ((100vw - 320px) / (768 - 320)));
-    }
-    .header__inner > .header__right > .contact > .text {
-        font-size: calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320)));
     }
     .advantage__inner {
         flex-direction: column;
@@ -1222,6 +1314,20 @@ body {
     }
     .footer__top_left {
         flex-direction: column;
+    }
+    .footer__bottom {
+        margin-top:calc(35px + (65 - 35) * ((100vw - 320px) / (768 - 320)));
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer__bottom_left, .footer__bottom_right {
+        text-align: center;
+    }
+    .footer__bottom_left {
+        margin-bottom: 20px;
+    }
+    .footer__row {
+        justify-content: center;
     }
 
 }

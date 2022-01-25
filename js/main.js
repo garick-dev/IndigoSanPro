@@ -6,16 +6,30 @@ document.addEventListener("DOMContentLoaded", (ev) => {
     const priceListBtnEl = document.querySelector(".button_services--transparent");
     const modalFormEl = document.querySelector(".modal__form");
     const modalPriceListEl = document.querySelector(".modal__price-list");
-    const menuMobileEl = document.querySelector(".burger-menu");
+    const headerEl = document.querySelector(".header__left");
     const burgerButtonEl = document.querySelector(".burger");
+    const modalPoliticEl = document.querySelector(".modal_politic");
+    const politicBtnEl = document.querySelector(".politic");
 
+    let burgerMenuMobileEl = `<div class="burger-menu">
+                        <div class="overlay overlay_burger-menu">
+                            <ul class="menu-mobile">
+                                <li class="menu-mobile__item"><a href="#services" class="subtitle menu-mobile__link">Услуги</a></li>
+                                <li class="menu-mobile__item"><a href="#about" class="subtitle menu-mobile__link">О компании</a></li>
+                                <li class="menu-mobile__item"><a href="#work" class="subtitle menu-mobile__link">Как работаем</a></li>
+                                <li class="menu-mobile__item"><a href="#order" class="subtitle menu-mobile__link">Контакты</a></li>
+                            </ul>
+                        </div>
+                    </div>`;
 
     const closeForm = () => {
         document.addEventListener("click", (ev) => {
             if (ev.target && ev.target.classList.contains("overlay") || ev.target && ev.target.classList.contains("menu-mobile__link")) {
                 modalFormEl.classList.add("hidden");
                 modalPriceListEl.classList.add("hide");
-                menuMobileEl.classList.add("hidden");
+                modalPoliticEl.classList.add("hidden");
+                const mobileMenuEl = document.querySelector(".burger-menu");
+                mobileMenuEl.parentNode.removeChild(mobileMenuEl);
             }
         })
     }
@@ -64,12 +78,20 @@ document.addEventListener("DOMContentLoaded", (ev) => {
     const showMobileMenu = () => {
         burgerButtonEl.addEventListener("click", (ev) => {
             ev.preventDefault();
-            if (menuMobileEl.classList.contains("hidden")) {
-                menuMobileEl.classList.remove("hidden");
-            }
+            headerEl.insertAdjacentHTML("beforeend", burgerMenuMobileEl);
         })
     }
     showMobileMenu();
+
+    const showPolitic = () => {
+        politicBtnEl.addEventListener("click", (ev) => {
+            ev.preventDefault();
+            if (modalPoliticEl.classList.contains("hidden")) {
+                modalPoliticEl.classList.remove("hidden");
+            }
+        })
+    }
+    showPolitic();
 
    const glideBanner= new Glide('.glide_banner', {
         type: 'slider',
