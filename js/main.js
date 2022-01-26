@@ -10,21 +10,19 @@ document.addEventListener("DOMContentLoaded", (ev) => {
     const burgerButtonEl = document.querySelector(".burger");
     const modalPoliticEl = document.querySelector(".modal_politic");
     const politicBtnEl = document.querySelector(".politic");
+    const menuEl = document.querySelector(".menu").innerHTML;
 
     let burgerMenuMobileEl = `<div class="burger-menu">
                         <div class="overlay overlay_burger-menu">
                             <ul class="menu-mobile">
-                                <li class="menu-mobile__item"><a href="#services" class="subtitle menu-mobile__link">Услуги</a></li>
-                                <li class="menu-mobile__item"><a href="#about" class="subtitle menu-mobile__link">О компании</a></li>
-                                <li class="menu-mobile__item"><a href="#work" class="subtitle menu-mobile__link">Как работаем</a></li>
-                                <li class="menu-mobile__item"><a href="#order" class="subtitle menu-mobile__link">Контакты</a></li>
+                            ${menuEl}
                             </ul>
                         </div>
                     </div>`;
 
     const closeForm = () => {
         document.addEventListener("click", (ev) => {
-            if (ev.target && ev.target.classList.contains("overlay") || ev.target && ev.target.classList.contains("menu-mobile__link")) {
+            if (ev.target && ev.target.classList.contains("overlay") || ev.target && ev.target.classList.contains("menu__link")) {
                 document.body.style.overflowY = "auto";
                 modalFormEl.classList.add("hidden");
                 modalPriceListEl.classList.add("hide");

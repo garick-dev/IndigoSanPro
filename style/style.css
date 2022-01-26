@@ -329,6 +329,7 @@ body {
     position: relative;
     display: flex;
     align-items: center;
+    margin: 10px 0;
 }
 
 .logo {
@@ -876,6 +877,7 @@ body {
 }
 
 .overlay_burger-menu {
+    overflow-y: auto;
     align-items: flex-start;
     justify-content: flex-start;
 }
@@ -888,11 +890,12 @@ body {
     list-style: none;
     width: 100%;
 }
-.menu-mobile__item {
+.menu-mobile > .menu__item {
+    margin-right: 0;
     margin-bottom: 30px;
     width: 90%;
 }
-.menu-mobile__link {
+.menu-mobile > .menu__item > .menu__link {
     padding: 20px;
     display: inline-block;
     width: 100%;
