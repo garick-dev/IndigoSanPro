@@ -25,11 +25,13 @@ document.addEventListener("DOMContentLoaded", (ev) => {
     const closeForm = () => {
         document.addEventListener("click", (ev) => {
             if (ev.target && ev.target.classList.contains("overlay") || ev.target && ev.target.classList.contains("menu-mobile__link")) {
+                document.body.style.overflowY = "auto";
                 modalFormEl.classList.add("hidden");
                 modalPriceListEl.classList.add("hide");
                 modalPoliticEl.classList.add("hidden");
                 const mobileMenuEl = document.querySelector(".burger-menu");
                 mobileMenuEl.parentNode.removeChild(mobileMenuEl);
+
             }
         })
     }
@@ -41,9 +43,7 @@ document.addEventListener("DOMContentLoaded", (ev) => {
                ev.preventDefault();
                if (modalFormEl.classList.contains("hidden")) {
                    modalFormEl.classList.remove("hidden");
-               }
-               else {
-                   modalFormEl.classList.add("hidden");
+                   document.body.style.overflowY = "hidden";
                }
            })
        });
@@ -56,6 +56,7 @@ document.addEventListener("DOMContentLoaded", (ev) => {
                 ev.preventDefault();
                 if (modalFormEl.classList.contains("hidden")) {
                     modalFormEl.classList.remove("hidden");
+                    document.body.style.overflowY = "hidden";
                 }
             })
 
@@ -67,6 +68,7 @@ document.addEventListener("DOMContentLoaded", (ev) => {
             ev.preventDefault();
             if (modalPriceListEl.classList.contains("hide")) {
                 modalPriceListEl.classList.remove("hide");
+                document.body.style.overflowY = "hidden";
             }
             else {
                 modalPriceListEl.classList.add("hide");
@@ -79,6 +81,7 @@ document.addEventListener("DOMContentLoaded", (ev) => {
         burgerButtonEl.addEventListener("click", (ev) => {
             ev.preventDefault();
             headerEl.insertAdjacentHTML("beforeend", burgerMenuMobileEl);
+            document.body.style.overflowY = "hidden";
         })
     }
     showMobileMenu();
@@ -88,6 +91,7 @@ document.addEventListener("DOMContentLoaded", (ev) => {
             ev.preventDefault();
             if (modalPoliticEl.classList.contains("hidden")) {
                 modalPoliticEl.classList.remove("hidden");
+                document.body.style.overflowY = "hidden";
             }
         })
     }
@@ -96,7 +100,7 @@ document.addEventListener("DOMContentLoaded", (ev) => {
    const glideBanner= new Glide('.glide_banner', {
         type: 'slider',
         animationDuration: 2000,
-        autoplay: 5000,
+        // autoplay: 5000,
         perTouch: 1,
         perView: 1,
         startAt: 0,
