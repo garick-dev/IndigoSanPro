@@ -100,13 +100,17 @@ document.addEventListener("DOMContentLoaded", (ev) => {
             if (ev.target && ev.target.classList.contains("order__form") || ev.target && ev.target.classList.contains("order__input")) {
                 const orderForm = document.querySelectorAll(".order__form");
                 orderForm.forEach(element => {
-                    element.addEventListener("keypress", (v) => {
+                    element.addEventListener("keyup", (v) => {
                         const name = element.querySelector("#name").value;
                         const phone = element.querySelector("#phone").value;
                         const btn = element.querySelector(".button_order");
-                        if (name.length >= 3 && phone.length >= 11) {
+                        if (name.length >= 3 && phone.length >= 16) {
                             btn.classList.add("gradient");
                             btn.classList.remove("button__disabled");
+                        }
+                        else if (name.length <= 2 || phone.length <= 15){
+                            btn.classList.remove("gradient");
+                            btn.classList.add("button__disabled");
                         }
                     })
                 })

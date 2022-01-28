@@ -247,6 +247,7 @@ body {
     font-family: "Geometria", sans-serif;
     white-space: nowrap;
     padding-left: 50px;
+    padding-right: 20px;
     position: relative;
     font-weight: 500;
     color: #37158D;
@@ -475,6 +476,12 @@ body {
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
+.advantage__inner:after {
+    content: "";
+    max-width: calc(285px * 2 + 70px);
+    width: 100%;
+    height: 0;
+}
 .advantage__item {
     margin-bottom: 20px;
     position: relative;
@@ -583,6 +590,17 @@ body {
     flex-wrap: wrap;
 }
 
+.services__row:after {
+    content: "";
+    margin-right: 10px;
+    height: 0;
+    max-width: 285px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 40px 48px 44px 48px;
+    border: 1px solid transparent;
+}
+
 
 .services__item {
     margin-right: 10px;
@@ -598,6 +616,7 @@ body {
     border: 1px solid #D2D2D2;
     border-radius: 10px;
 }
+
 
 .services__image {
     margin-bottom: 30px;
@@ -1152,6 +1171,10 @@ body {
     .services__content {
         margin: calc(35px + (80 - 35) * ((100vw - 320px) / (1920 - 320))) 0;
     }
+    .services__row:after {
+        max-width: calc(200px + (285 - 200) * ((100vw - 320px) / (1920 - 320)));
+
+    }
 
     .services__item {
         max-width: calc(200px + (285 - 200) * ((100vw - 320px) / (1920 - 320)));
@@ -1231,6 +1254,7 @@ body {
     }
     .text_price-list {
         padding-left: calc(20px + (50 - 20) * ((100vw - 320px) / (1920 - 320)));
+        padding-right: calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320)));
     }
     .politic__outer {
         padding:  calc(20px + (60 - 20) * ((100vw - 320px) / (1920 - 320)));
@@ -1248,6 +1272,9 @@ body {
     .work__number_outer:after {
         max-width: calc(40px + (245 - 40) * ((100vw - 320px) / (1200 - 320)));
         right: calc(-100px + (-160 + 100) * ((100vw - 900px) / (1200 - 900)));
+    }
+    .advantage__inner:after {
+        max-width: calc(calc(200px + (285 - 200) * ((100vw - 320px) / (1200 - 320))) * 2 + calc(40px + (70 - 40) * ((100vw - 320px) / (1200 - 320))));
     }
 
 }
@@ -1311,6 +1338,7 @@ body {
         flex-direction: column;
         align-items: center;
     }
+
     .advantage__item {
         padding: 20px;
     }
