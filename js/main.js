@@ -95,118 +95,40 @@ document.addEventListener("DOMContentLoaded", (ev) => {
     }
     showPolitic();
 
-   const glideBanner= new Glide('.glide_banner', {
-        type: 'slider',
-        animationDuration: 2000,
-        // autoplay: 5000,
-        perTouch: 1,
-        perView: 1,
-        startAt: 0,
-        rewind: false,
-        keyboard: false,
-        gap: 0,
-        breakpoints: {
-            1280: {
-                perView: 1
-            },
-
-            500: {
-                perView: 1
+    const checkInputForm = () => {
+        document.addEventListener("click", (ev) => {
+            if (ev.target && ev.target.classList.contains("order__form") || ev.target && ev.target.classList.contains("order__input")) {
+                const orderForm = document.querySelectorAll(".order__form");
+                orderForm.forEach(element => {
+                    element.addEventListener("keypress", (v) => {
+                        const name = element.querySelector("#name").value;
+                        const phone = element.querySelector("#phone").value;
+                        const btn = element.querySelector(".button_order");
+                        if (name.length >= 3 && phone.length >= 11) {
+                            btn.classList.add("gradient");
+                            btn.classList.remove("button__disabled");
+                        }
+                    })
+                })
             }
-        }
-    })
-    glideBanner.mount();
-   const glideServices= new Glide('.glide_services', {
-        type: 'slider',
-        animationDuration: 1500,
-       perTouch: 1,
-        perView: 1,
-        startAt: 0,
-       focusAt: 1,
-        rewind: false,
-        keyboard: false,
-        gap: 30,
-        breakpoints: {
-            1280: {
-                perView: 1
-            },
+        })
 
-            500: {
-                perView: 1
+    }
+    checkInputForm();
+
+    const addMaskForPhone = () => {
+        document.addEventListener("keypress", (ev) => {
+            if (ev.target && ev.target.classList.contains("order__phone")) {
+                let phone = ev.target;
+                let maskOptions = {
+                    mask: '+{7}(000)000-00-00',
+                    // lazy: false
+                };
+                let mask = IMask(phone, maskOptions);
             }
-        }
-    })
-    glideServices.mount();
+        });
 
-   const glideAbout= new Glide('.glide_about', {
-        type: 'slider',
-        animationDuration: 1500,
-       perTouch: 1,
-        perView: 1,
-        startAt: 0,
-       focusAt: 0,
-        rewind: false,
-        keyboard: false,
-        gap: 0,
-        breakpoints: {
-            1280: {
-                perView: 1
-            },
-
-            500: {
-                perView: 1
-            }
-        }
-    })
-    glideAbout.mount();
-
-    const glideWork= new Glide('.glide_work', {
-        type: 'slider',
-        animationDuration: 1500,
-        perTouch: 1,
-        perView: 3,
-        startAt: 1,
-        focusAt: "2",
-        rewind: false,
-        keyboard: false,
-        gap: 30,
-        breakpoints: {
-            768: {
-                perView: 3
-            },
-
-            500: {
-                perView: 2
-            },
-
-        }
-    })
-    glideWork.mount();
-
-    const glidePriceList= new Glide('.glide_price-list', {
-        type: 'slider',
-        animationDuration: 1500,
-        perTouch: 1,
-        perView: 1,
-        startAt: 0,
-        focusAt: 0,
-        rewind: false,
-        keyboard: false,
-        gap: 30,
-        breakpoints: {
-            1280: {
-                perView: 1
-            },
-
-            500: {
-                perView: 1
-            }
-        }
-    })
-    glidePriceList.mount();
-
-
-
-
+    }
+    addMaskForPhone();
 });
 
