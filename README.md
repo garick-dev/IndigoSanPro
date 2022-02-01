@@ -11,3 +11,6 @@ Screenshots of work:
 ![image](https://user-images.githubusercontent.com/73178499/152049305-741eb63c-5c01-40e9-b38a-b39c8b22009a.png)
 ![image](https://user-images.githubusercontent.com/73178499/152049331-a93761d3-a907-4456-9cf2-e6becc497e6e.png)
 ![image](https://user-images.githubusercontent.com/73178499/152049351-9ef05a97-1bf3-43c6-a4c4-f3430e87f8b2.png)
+![image](https://user-images.githubusercontent.com/73178499/152049771-2f77f1f9-0d66-4429-b0a4-4678ebf36075.png)
+![image](https://user-images.githubusercontent.com/73178499/152049697-b5df86c8-c162-4c9e-88cc-3d38b695394f.png)
+
